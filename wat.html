@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="files/slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="files/slick/slick-theme.css">
+  <link rel="stylesheet" type="text/css" href="files/buttons.css">
+    <link rel="stylesheet" type="text/css" href="files/navbar.css">
+<script src="files/jquery-1.7.1.min.js"></script>
+    <script src="files/jquery.terminal-0.11.18.min.js"></script>
+<script src="files/jquery.mousewheel-min.js"></script>
+<link href="files/jquery.terminal-0.11.18.css" rel="stylesheet"/>
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 90%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+  </style>
+      <script>
+    jQuery(document).ready(function($) {
+        $('body').terminal("json-rpc-service-demo.php", {
+            login: true,
+            greetings: "You are authenticated",
+            onBlur: function() {
+                // the height of the body is only 2 lines initialy
+                return false;
+            }
+        });
+    });
+    </script>
+</head>
+<body>
+
+ 
+
+
+
+</body>
+</html>
