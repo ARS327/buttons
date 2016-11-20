@@ -47,6 +47,8 @@ jQuery(document).ready(function($) {
         } else if (command == 'yes'){
             term.echo('Clearance Recieved.  Continue?');
             term.push(function(command, term) {
+                if (command == 'help') {
+                    term.echo('Available commands are yes, no, and stop');
                 if (command == 'yes') {
                     term.echo('Nuclear launch detected.  Please immediately depart for the nearest shelter.');
                 } else if (command == 'abort') {
