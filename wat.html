@@ -43,15 +43,17 @@ jQuery(document).ready(function($) {
     var id = 1;
     $('body').terminal(function(command, term) {
         if (command == 'help') {
-            term.echo("available commands are yes, yes, and no");
+            term.echo("Available commands are yes, yes, and no");
         } else if (command == 'yes'){
             term.echo('Clearance Recieved.  Continue?');
             term.push(function(command, term) {
-                if (command == 'help') {
-                    term.echo('Available commands are yes, no, and stop');
                 if (command == 'yes') {
                     term.echo('Nuclear launch detected.  Please immediately depart for the nearest shelter.');
+                } else if (command == 'help') {
+                    term.echo('Available commands are yes, no, abort, and stop.');
                 } else if (command == 'abort') {
+                    term.echo('Please type supercalifragilisticexpialidocious to confirm abort command.  5 seconds to command time out.');
+                } else if (command == 'supercalifragilisticexpialidocious') {
                     term.echo('Abort failed. Nuclear launch detected.  Please immediately depart for the nearest shelter.');
                 } else if (command == 'stop') {
                     term.echo('You can not stop the future!');
