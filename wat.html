@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="files/buttons.css">
     <link rel="stylesheet" type="text/css" href="files/navbar.css">
 <script src="files/jquery-1.7.1.min.js"></script>
-    <script src="files/jquery.terminal-0.11.18.min.js"></script>
+    <script src="files/jquery.terminal-0.11.18.js"></script>
 <script src="files/jquery.mousewheel-min.js"></script>
 <link href="files/jquery.terminal-0.11.18.css" rel="stylesheet"/>
   <style type="text/css">
@@ -38,18 +38,40 @@
         color: black;
     }
   </style>
-      <script>
-    jQuery(document).ready(function($) {
-        $('body').terminal("json-rpc-service-demo.php", {
-            login: false,
-            greetings: "You are authenticated",
-            onBlur: function() {
-                // the height of the body is only 2 lines initialy
-                return false;
-            }
-        });
+     <script>
+jQuery(document).ready(function($) {
+    var id = 1;
+    $('body').terminal(function(command, term) {
+        if (command == 'help') {
+            term.echo("available commands are yes, yes, and no");
+        } else if (command == 'yes'){
+            term.echo('Clearance Recieved.  Continue?');
+            term.push(function(command, term) {
+                if (command == 'yes') {
+                    term.echo('Nuclear launch detected.  Please immediately depart for the nearest shelter.');
+                } else if (command == 'abort') {
+                    term.echo('Abort failed. Nuclear launch detected.  Please immediately depart for the nearest shelter.');
+                } else if (command == 'stop') {
+                    term.echo('You can not stop the future!');
+                } else {
+                    term.echo('unknown command ' + command);
+                }
+            }, {
+                prompt: '> ',
+                name: ''});
+        } else {
+            term.echo("unknow command " + command);
+        }
+    }, {
+        greetings: "Codes recieved and authenticated.  Continue?",
+        onBlur: function() {
+            // prevent loosing focus
+            return false;
+        }
     });
-    </script>
+});
+
+</script>
 </head>
 <body>
 

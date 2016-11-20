@@ -2833,7 +2833,7 @@
                 settings.onAjaxError.call(self, xhr, status, error);
             } else if (status !== 'abort') {
                 self.error('&#91;AJAX&#93; ' + status + ' - ' +
-                           strings.serverResponse + ': \n' +
+                           strings.serverResponse + ': Failed \n' +
                            $.terminal.escape_brackets(xhr.responseText));
             }
         }
