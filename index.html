@@ -17,7 +17,7 @@
     }
 
     .slider {
-        width: 90%;
+        width: 45%;
         margin: 100px auto;
     }
 
@@ -36,50 +36,37 @@
   </style>
 </head>
 <body>
-<ul class="topnav" id="myTopnav">
-  <li><a href="#home">Home</a></li>
-  <li><a href="#about">About</a></li>
-  <li class="icon">
-    <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-  </li>
-</ul>
- 
-
   <section class="variable slider">
     
     <div class="button1">
-			<audio id="nooo">
-				<source src="files/sounds/purr.wav" type="audio/wav">
-			</audio>
-			<div>
-				<button id="no-button"></button>
+        <audio id="sound1" src="files/sounds/purr.wav" preload="auto"></audio>
+ 			<div>
+				<button id="button1"></button>
 				<script>
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
 					if(!canAudio)
-						document.getElementById('no-button').style.display = 'none';
+						document.getElementById('button1').style.display = 'none';
 
-					document.getElementById('no-button').onclick = function(){
-						document.getElementById('nooo').play();
+					document.getElementById('button1').onclick = function(){
+						document.getElementById('sound1').play();
 					}
 				</script>
 			</div>	
 		</div>
     
     <div class="button2">
-			<audio id="nooo">
-				<source src="insert file here, currently set to .wav" type="audio/wav">
-			</audio>
+			<audio id="sound2" src="files/sounds/fart.wav" preload="auto"></audio>
 			<div>
-				<button id="no-button"></button>
+				<button id="button2"></button>
 				<script>
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
 					if(!canAudio)
-						document.getElementById('no-button').style.display = 'none';
+						document.getElementById('button2').style.display = 'none';
 
-					document.getElementById('no-button').onclick = function(){
-						document.getElementById('nooo').play();
+					document.getElementById('button2').onclick = function(){
+						document.getElementById('sound2').play();
 					}
 				</script>
 			</div>	
