@@ -72,9 +72,9 @@
 			</div>	
 		</div>
      <div class="button3">
-			<audio id="sound3" src="files/sounds/.wav" preload="auto"></audio>
+			<audio id="sound3" src="files/sounds/noot.wav" preload="auto"></audio>
 			<div>
-				<button id="no-button"></button>
+				<button id="button3"></button>
 				<script>
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
@@ -88,14 +88,14 @@
 			</div>	
 		</div>
      <div class="button4">
-			<audio id="sound4" src="files/sounds/.wav" preload="auto"></audio>
+         <audio id="sound4" src="files/sounds/bork.wav" preload="auto"></audio>
 			<div>
 				<button id="button4"></button>
 				<script>
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
 					if(!canAudio)
-						document.getElementById('no-button').style.display = 'none';
+						document.getElementById('button4').style.display = 'none';
 
 					document.getElementById('button4').onclick = function(){
 						document.getElementById('sound4').play();
@@ -104,9 +104,9 @@
 			</div>	
 		</div>
       <div class="button5">
-			<audio id="sound5" src="files/sounds/.wav" preload="auto"></audio>
+			<audio id="sound5" src="files/sounds/ft.wav" preload="auto"></audio>
 			<div>
-				<button id="no-button"></button>
+				<button id="button5"></button>
 				<script>
 					var a = document.createElement('audio');
 					canAudio = !!(a.canPlayType && (a.canPlayType('audio/mpeg;') || a.canPlayType('audio/ogg;') || a.canPlayType('audio/mp4;')));
